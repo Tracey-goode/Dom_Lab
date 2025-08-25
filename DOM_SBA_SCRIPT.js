@@ -4,6 +4,7 @@ const idOne = document.getElementById('idOne');
 idOne.style.webkitTextStrokeColor = 'Black'
 idOne.style.webkitTextStrokeWidth = '1.5px'
 idOne.style.color = 'Transparent'
+idOne.style.paddingTop = '3%'
 
 
 const divOne = document.createElement('div');
@@ -32,10 +33,10 @@ cache.forEach(div => {
     div.style.border = '2px solid turquoise'
     div.style.padding = '10px'
     div.style.margin = '10px 0'
-    if(!div.contains(child)) {
+    if (!div.contains(child)) {
         div.appendChild(child.cloneNode(true));
     }
-}); 
+});
 
 const img = document.createElement('img')
 img.src = 'https://nationalzoo.si.edu/sites/default/files/styles/wide/public/animals/cheetah-002.jpg?h=c8501f53&itok=zro4sVwK'
@@ -43,7 +44,7 @@ img.alt = 'A cheetah image'
 const ul = document.querySelector('.reasons')
 document.body.insertBefore(img, ul)
 
-img.style.width =('50%')
+img.style.width = ('50%')
 img.style.display = 'block';
 img.style.margin = '0 auto';
 
@@ -61,7 +62,7 @@ button.style.borderRadius = '60px'
 // button.style.alignItems = 'center';
 idOne.appendChild(button);
 
-button.addEventListener('click', function() {
+button.addEventListener('click', function () {
     alert('Psych!')
 });
 
@@ -78,22 +79,19 @@ let button3 = document.createElement('button');
 buttonContainer.appendChild(button2);
 buttonContainer.appendChild(button3)
 
-button2.textContent = "Dont click Me"
-button3.textContent = "Click Me ;)"
+button2.textContent = "Click Me 😏"
+button3.textContent = "No Click Me 😜"
 
 const buttons = [button2, button3]
 buttons.forEach(button => {
-    button2.addEventListener('click', function() {
-        window.location.href = ['LINK']
+    button2.addEventListener('click', function () {
+        window.location.href = ['./Dom2.html']
     })
-    button3.addEventListener('click', function() {
+    button3.addEventListener('click', function () {
         alert('YAAAY!')
     })
 })
 
-
-
-function highlightEveryThirdWord() {
 
 let p3 = document.createElement('p')
 document.body.appendChild(p3)
@@ -101,17 +99,39 @@ p3.textContent = loremP
 p3.style.margin = '20px 110px 0 110px'
 p3.style.display = 'block'
 
-const words = loremP.split(',')
 
-words.forEach((words, index) => {
- console.log('Element at index ${index}: ${element}')
+p3.addEventListener('mouseenter', () => {
+    p3.style.color = 'orange'
+});
+
+p3.addEventListener('mouseleave', () => {
+    p3.style.color = 'initial';  // or specify 'black' or any color you want
+});
+
+///Form
+
+const formuoli = document.getElementById('formOf');
+const nameReq = document.getElementById('name');
+
+// formuoli.addEventListener('submit', function (event) { ///Dont understand why i need this but button 4 doesnt seem to work with out it
+//     event.preventDefault();
+//     const name = nameReq.value.trim();
+// //     if (name) {
+// //         console.log('Name:', name);
+// //     } else {
+// //         window.alert('Please fill in your Cheetah Name');
+// //     }
+// });
+
+// fixed/
+
+const button4 = document.getElementById('link')
+
+button4.addEventListener('click', function () {
+    const name = nameReq.value.trim();
+    if (name) {
+        window.location.href = "./Dom2.html";
+    } else {
+        alert('FILL out your Cheetah Name!!')
+    }
 })
-
-}
-// p3.addEventListener('mouseenter', () => {
-//     p3.style.color = 'orange'
-// });
-
-// p3.addEventListener('mouseleave', () => {
-//     p3.style.color = 'initial';  // or specify 'black' or any color you want
-// });
