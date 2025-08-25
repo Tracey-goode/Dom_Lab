@@ -5,6 +5,7 @@ body {
     box-sizing: border-box;
     height: 100%;
     background-color: rgb(255, 238, 218);
+
 }
 
 *::before,
@@ -13,3 +14,11 @@ body {
     box-sizing: inherit;
 }
 
+#idOne {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ul {
+    list-style-type: none;
+}
